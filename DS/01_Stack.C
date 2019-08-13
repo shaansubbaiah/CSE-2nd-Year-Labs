@@ -33,11 +33,14 @@ void Display(){
 	}
 
 
-void Push(int x){
+void Push(){
+	int val;
 	if(isFull() == 0){
 		top++;
-		stk[top] = x;
-		printf("\n%d has been PUSHED.\n", x);
+		printf("\nEnter value to push:");
+		scanf("%d", &val);
+		stk[top] = val;
+		printf("\n%d has been PUSHED.\n", val);
 		}
 	else
 		printf("\nStack is FULL\n");
@@ -59,16 +62,14 @@ void Pop(){
 
 
 int main(){
-	int c=0, val=0;
+	int c;
 	clrscr();
-	while(c != 5){
+	do{
 		printf("1.Push \n2.Pop \n5.Exit\nChoice:");
-		scanf("%d\n", &c);
+		scanf("%d", &c);
 		switch(c){
 			case 1:
-				printf("\nEnter value to push:");
-				scanf("%d", &val);
-				Push(val);
+				Push();
 				break;
 			case 2:
 				Pop();
@@ -78,7 +79,7 @@ int main(){
 			default:
 				printf("\nWrong Choice\n");
 			}
-		}
+		}while(c !=5);
 	getch();
 	return 0;
 	}

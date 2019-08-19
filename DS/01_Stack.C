@@ -1,6 +1,9 @@
+/*
+ *  ---------- Program to demonstrate STACKS ----------
+ */
 #include<stdio.h>
+#include<stdlib.h>
 #define MAX 5
-#include<conio.h>
 
 int top = -1;
 int i;
@@ -40,7 +43,7 @@ void Push(){
 		printf("\nEnter value to push:");
 		scanf("%d", &val);
 		stk[top] = val;
-		printf("\n%d has been PUSHED.\n", val);
+		printf("\n%d has been PUSHED.\n\n", val);
 		}
 	else
 		printf("\nStack is FULL\n");
@@ -53,7 +56,7 @@ void Pop(){
 	if(isEmpty() == 1)
 		printf("\nStack is EMPTY\n");
 	else{
-		printf("\n%d has been POPPED.\n", stk[top]);
+		printf("\n%d has been POPPED.\n\n", stk[top]);
 		top--;
 		}
 
@@ -63,9 +66,8 @@ void Pop(){
 
 int main(){
 	int c;
-	clrscr();
 	do{
-		printf("1.Push \n2.Pop \n5.Exit\nChoice:");
+		printf("\n1.Push \n2.Pop \n5.Exit\nChoice:");
 		scanf("%d", &c);
 		switch(c){
 			case 1:
@@ -75,11 +77,61 @@ int main(){
 				Pop();
 				break;
 			case 5:
-				exit(0);
+				exit(1);
 			default:
 				printf("\nWrong Choice\n");
 			}
 		}while(c !=5);
-	getch();
 	return 0;
 	}
+
+/* ------ OUTPUT ------
+
+1.Push
+2.Pop
+5.Exit
+Choice:1
+
+Enter value to push:4
+
+4 has been PUSHED.
+
+4
+
+1.Push
+2.Pop
+5.Exit
+Choice:1
+
+Enter value to push:5
+
+5 has been PUSHED.
+
+4 5
+
+1.Push
+2.Pop
+5.Exit
+Choice:1
+
+Enter value to push:6
+
+6 has been PUSHED.
+
+4 5 6
+
+1.Push
+2.Pop
+5.Exit
+Choice:2
+
+6 has been POPPED.
+4 5
+
+1.Push
+2.Pop
+5.Exit
+Choice:5
+exit status 1
+ 
+*/

@@ -89,7 +89,7 @@ int main(){
 
 1.Push
 2.Pop
-5.Exit
+0.Exit
 Choice:1
 
 Enter value to push:4
@@ -100,7 +100,7 @@ Enter value to push:4
 
 1.Push
 2.Pop
-5.Exit
+0.Exit
 Choice:1
 
 Enter value to push:5
@@ -111,7 +111,7 @@ Enter value to push:5
 
 1.Push
 2.Pop
-5.Exit
+0.Exit
 Choice:1
 
 Enter value to push:6
@@ -122,16 +122,17 @@ Enter value to push:6
 
 1.Push
 2.Pop
-5.Exit
+0.Exit
 Choice:2
 
 6 has been POPPED.
+
 4 5
 
 1.Push
 2.Pop
-5.Exit
-Choice:5
+0.Exit
+Choice:0
 exit status 1
  
 */

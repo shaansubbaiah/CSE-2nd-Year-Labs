@@ -65,9 +65,9 @@ void Pop(){
 
 
 int main(){
-	int c;
+	int c=1;
 	do{
-		printf("\n1.Push \n2.Pop \n5.Exit\nChoice:");
+		printf("\n1.Push \n2.Pop \n0.Exit\nChoice:");
 		scanf("%d", &c);
 		switch(c){
 			case 1:
@@ -76,12 +76,12 @@ int main(){
 			case 2:
 				Pop();
 				break;
-			case 5:
+			case 0:
 				exit(1);
 			default:
 				printf("\nWrong Choice\n");
 			}
-		}while(c !=5);
+		}while(c != 0);
 	return 0;
 	}
 

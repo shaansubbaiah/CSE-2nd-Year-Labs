@@ -48,16 +48,16 @@ void main(){
   	while(1){
 		printf("\n\n----MENU----\n");
     	printf("\n1.Enqueue \n2.Dequeue\n3.Display\n4.Exit\n");
-    	scanf("%d", & a);
-    	switch (a) {
+    	scanf("%d", &a);
+    	switch(a){
     	case 1:
-      		enqueue(q, & r);
+      		enqueue(q, &r);
       		break;
    		case 2:
-      		dequeue(q, & r, & f);
+      		dequeue(q, &r, &f);
       		break;
     	case 3:
-      		display(q, & r, & f);
+      		display(q, &r, &f);
       		break;
     	case 4:
       		exit(0);

@@ -5,8 +5,6 @@ class book{
 	int num_pages;
 	double price;
 	
-	// book(){}	
-	// String name, String author, int num_pages, double price
 	book(){
 		name="Not Given";
 		author="Not Given";
@@ -21,33 +19,19 @@ class book{
 
 	public void set_data(){
 		Scanner s = new Scanner(System.in);
-		System.out.println("Enter:\nName:");
+		System.out.print("Enter:\n\tName:");
 		name=s.nextLine();
-		System.out.println("\nAuthor:");
+		System.out.print("\tAuthor:");
 		author=s.nextLine();
-		System.out.println("\nPages:");
+		System.out.print("\tPages:");
 		num_pages=s.nextInt();
-		System.out.println("\nPrice:");
+		System.out.print("\tPrice:");
 		price=s.nextDouble();	
 	}
 	
 	public void get_data(){
 		System.out.println("Data\nName:"+name+"\nAuthor:"+author+"Pages:"+num_pages+"Price:"+price);
 	}
-	
-	/*	
-	public static int get_object(int n){
-		Scanner s = new Scanner(System.in);
-		System.out.println("Enter object number:");
-		int c=s.nextInt();		
-		if(c>=n){
-			System.out.println("Object does not exist!, using object 0");
-			return 0;
-		}
-		else
-			return c;
-	}
-*/
 
 	public static void main(String args[]){
 		int n, ch;
@@ -60,8 +44,8 @@ class book{
 		int i=0;
 		while(i<n){
 			obj[i] = new book();
-			System.out.println("\n----MENU----\n");
-			System.out.println("1.Using Set Data\n2. Using toString()\n4.Exit\nChoice:");
+			System.out.print("\n----MENU----\n");
+			System.out.print("1.Using Set Data\n2.Using toString()\n4.Exit\nChoice:");
 			ch=s.nextInt();
 			switch(ch){
 				case 1:

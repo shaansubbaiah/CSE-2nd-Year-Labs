@@ -13,8 +13,7 @@ NODE getnode()
 	p=(NODE)malloc(sizeof(struct node));
 	if(p!=NULL)
 		return p;
-	else
-	{
+	else{
 		printf("No memory allocatipon\n");
 		exit(0);
 	}

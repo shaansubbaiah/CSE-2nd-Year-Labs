@@ -158,7 +158,10 @@ void main()
                 break;   
 
             case 5:
-                exit(1);		
+                exit(1);
+                
+            default:
+                printf("\nWrong Choice.\n");
         }
     }
 }

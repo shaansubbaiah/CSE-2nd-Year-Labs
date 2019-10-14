@@ -4,10 +4,11 @@
  *   Current -> Has minimum balance and cheque facility 
  */
 import java.util.*;
+import java.lang.Math.*;
 
 class bank{
     public int cust_id, acc_no;
-    public double balance, SI;
+    public double balance, CI;
     public String acc_type, cust_name;
 
     Scanner s = new Scanner(System.in);
@@ -30,15 +31,16 @@ class bank{
         double rate = s.nextDouble();
         System.out.print("\tTerm(in years):");
         double time = s.nextDouble();
-        SI = balance * rate * time * 0.01;
-        System.out.println("Simple Interest = "+SI);
+        double tot = balance * Math.pow((1 + (rate/100)), time);
+		CI = tot - balance;
+        System.out.println("Compund Interest = "+CI);
     }
 
     void display(){
         System.out.println("\n---DETAILS---");
         System.out.println("\tCustomer Name: "+cust_name+"\n\tID:"+cust_id);
         System.out.println("\tAccount Number:"+acc_no);
-        System.out.println("\tSimple Interest:"+SI);
+        System.out.println("\tCompund Interest:"+CI);
     }
 
     void withdrawal(){
@@ -64,11 +66,11 @@ class savings extends bank{
 class current extends bank{
     // check min balance and assign service charge
     double min_balance = 5000.00; 
-    double svc_chrg = 250.00;
+    double svc_chrg = 0.05 * balance; // svc charge is 5% of balance
     void cal_interest(){
         if(balance <= min_balance){
             System.out.print("Balance is less than Minimum!\n");
-            System.out.print("Service charge "+svc_chrg+" has been debited!");
+            System.out.print("Service charge "+svc_chrg+" has been debited!\n");
             balance -= svc_chrg;
             System.out.print("Balance = "+balance);
         }
@@ -118,4 +120,4 @@ class bank_demo{
             }
         }
     }
-}     
+} 

@@ -7,8 +7,7 @@
 
 struct student{
     char name[30], email[50], usn[11];
-}
-        std[MAX_STUDENTS];
+}std[MAX_STUDENTS];
 
 int i, c, top=-1;
 

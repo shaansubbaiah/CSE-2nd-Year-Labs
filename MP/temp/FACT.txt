@@ -1,0 +1,21 @@
+.MODEL SMALL
+.DATA
+    N DB 3
+.CODE
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, N
+    MOV CL, N
+
+AGAIN:
+    DEC CL
+    MUL CL
+    CMP CL, 01
+    JNE AGAIN
+; ANS IN DX
+
+    MOV DX, AX
+    MOV AH, 4CH
+    INT 21H
+END

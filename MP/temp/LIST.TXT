@@ -1,0 +1,20 @@
+EXTRA
+    Gcd *
+    Factorial *
+    Temple *
+    Equation *
+    Prime numbers 
+LAB
+    Ascii -
+    Binary
+    Bubble *
+    Compare two strings *
+    Reverse *
+
+TEMPLE
+FACT
+GCD
+PRIME
+POLY
+REV
+CMPSTR

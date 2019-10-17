@@ -1,0 +1,4 @@
+.MODEL SMALL
+.DATA
+    ARR DB 10 DUP(?)
+    

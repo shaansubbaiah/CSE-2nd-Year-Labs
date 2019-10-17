@@ -1,0 +1,29 @@
+;9X^3 + 5X^2 - 2
+.MODEL SMALL
+.DATA
+    X DW 0002
+.CODE
+    MOV AX, @DATA
+    MOV DS, AX
+
+    XOR AX, AX
+    
+    MOV AX, X
+    MUL X
+    MOV CX, 05
+    MUL CX
+    MOV BX, AX
+
+    MOV AX, X
+    MUL X
+    MUL X
+    MOV CX, 09
+    MUL CX
+    
+    ;EVAL EXPRESSION
+    ADD AX, BX
+    SUB AX, 02
+
+    MOV AH, 4CH
+    INT 21H 
+END

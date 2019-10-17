@@ -1,0 +1,37 @@
+; If a<b, exchange a and b.
+; Divide a by b and get the remainder, r. 
+;   If r=0, report b as the GCD of a and b.
+; Replace a by b and replace b by r. Return to the previous step. 
+.MODEL SMALL
+.DATA
+    N1 DW 000AH
+    N2 DW 0004H
+    GCD DW ?
+
+.CODE
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV AX, N1
+    MOV BX, N2
+
+L1: CMP AX, BX
+    JE EXIT
+    JB EXCHANGE
+
+L2: XOR DX, DX
+    DIV BX
+    CMP DX, 00
+    JE EXIT
+    MOV AX, DX
+    JMP L1
+
+EXCHANGE:
+    XCHG AX, BX
+    JMP L2
+
+EXIT:
+    MOV GCD, BX
+
+    MOV AH, 4CH
+    INT 21H
+END

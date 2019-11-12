@@ -11,14 +11,7 @@ typedef struct node{
 
 
 NODE getnode(){
-    NODE p;
-    p=(NODE)malloc(sizeof(struct node));
-    if(p != NULL)
-        return p;
-    else{
-        printf("No memory allocation.\n");
-        exit(0);
-    }
+    return (NODE)malloc(sizeof(struct node));
 }
 
 

@@ -15,7 +15,7 @@
     Note: Student.class file must be present in SEE 
     during compilation of External.java (or) all 3
     package files must be compiled together using 
-    java -d . <file 1> <file 2> ... <file n>
+    javac -d . <file 1> <file 2> ... <file n>
 */  -------------------------------------------------
 
 

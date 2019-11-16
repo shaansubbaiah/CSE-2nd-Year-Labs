@@ -84,7 +84,7 @@ void display(Node first){
       printf("List is empty\n");
     else{
         temp=first;
-        printf("Element in the list: ");
+        printf("LIST>> ");
         while(temp!=NULL){
             printf("%d ",temp->data);
             temp=temp->next;
@@ -97,7 +97,7 @@ int main(){
     Node first1=NULL;
     Node first2=NULL;
     int a,value,pos;
-    while(1){
+    
         printf("\n1.Ins list 1\n");
 		printf("2.Ins list 2\n");
 		printf("3.Srt list 1\n");
@@ -105,7 +105,8 @@ int main(){
 		printf("5.Concatenate\n");
 		printf("6.Reverse\n");
 		printf("7.Exit\n");
-
+    while(1){
+      printf("Choice:");
 		scanf("%d",&a);
    		switch(a){
             case 1: 

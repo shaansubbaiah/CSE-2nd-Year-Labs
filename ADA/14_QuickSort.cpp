@@ -1,43 +1,36 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
 
-int partition(int a[], int l, int r){
-    int p=a[l], s=l;
-    for(int i=l+1; i<r; i++)
-        if(a[i]<p){
-            s++;
-            swap(a[s],a[i]);
+int partition(int a[], int l, int r) {
+    int pivot = a[r];
+    int pIndex = 0;
+    for (int i = 0; i < r; i++) {
+        if (a[i] <= pivot) {
+            swap(a[i], a[pIndex]);
+            pIndex++;
         }
+    }
+    swap(a[pIndex], a[r]);
 
-    swap(a[l], a[s]);
-    return s;
+    return pIndex;
 }
 
-void quickSort(int a[], int l, int r){
-    if(l<r){
-        int s=partition(a, l, r);
-        quickSort(a, l, s);
-        quickSort(a, s+1, r);
+void quickSort(int a[], int l, int r) {
+    if (l < r) {
+        int p = partition(a, l, r);
+        quickSort(a, 0, p - 1);
+        quickSort(a, p + 1, r);
     }
 }
 
-void main(){
-    int n;
-    cout<<"Enter n:";
-    cin>>n;
+int main() {
+    int arr[] = {3, 5, 7, 1, 2, 6};
 
-    int a[n];
-    cout<<"Enter elements:";
-    for(int i=0; i<n; i++)
-        cin>>a[i];
+    quickSort(arr, 0, 5);
 
-    clock_t start=clock();
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
+    }
 
-    quickSort(a, 0, n);
-    cout<<"Sorted: ";
-    for(int i=0; i<n; i++)
-        cout<<a[i]<<" ";
-
-    cout<<endl<<"Time: "<<(clock()-start)<<"clock cycles";
+    return 0;
 }

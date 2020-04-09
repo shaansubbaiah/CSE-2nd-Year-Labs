@@ -1,56 +1,60 @@
+// Quick sort
 #include <iostream>
-#include <ctime>
 using namespace std;
 
-void merge(int a[],int b[],int c[],int p, int q){
-    int i=0, j=0, k=0;
-    while(i<p && j<q){
-        if(b[i]<c[j])
-            a[k++] = b[i++];
+void merge(int p[], int plen, int q[], int qlen, int r[]) {
+    int pi = 0, qi = 0, ri = 0;
+    while (pi < plen && qi < qlen) {
+        if (p[pi] < q[qi]) {
+            r[ri] = p[pi];
+            pi++;
+        } else {
+            r[ri] = q[qi];
+            qi++;
+        }
+        ri++;
+    }
+    while (pi < plen) {
+        r[ri] = p[pi];
+        ri++;
+        pi++;
+    }
+    while (qi < qlen) {
+        r[ri] = q[qi];
+        ri++;
+        qi++;
+    }
+}
+
+void mergeSort(int a[], int l) {
+    if (l < 2)
+        return;
+    int mid = l / 2;
+    int left[mid];
+    int right[l - mid];
+
+    for (int i = 0; i < l; i++) {
+        if (i < mid)
+            left[i] = a[i];
         else
-            a[k++] = c[j++];
+            right[i - mid] = a[i];
     }
-    if(i==p){
-        for(int l=j; l<q; l++)
-            a[k++] = c[l];
-    }
-    else{
-        for(int l=i; l<p; l++)
-            a[k++] = b[l];
-    }
+
+    mergeSort(left, mid);
+    mergeSort(right, l - mid);
+
+    merge(left, mid, right, l - mid, a);
 }
 
-void mergeSort(int a[],int n){
-    if(n>1){
-        int c[n/2], b[n/2];
-        for(int i=0; i<n/2; i++)
-            b[i] = a[i];
-        for(int i=0, j=n/2; j<n; i++, j++)
-            c[i] = a[j];
-        mergeSort(b, n/2);
-        mergeSort(c, n-n/2);
-        merge(a, b, c, n/2, n-n/2);
+int main() {
+    int arr[] = {3, 5, 7, 1, 2, 6};
+    int len = 6;
+
+    mergeSort(arr, len);
+
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
     }
-}
 
-void main(){
-    int n;
-
-    cout<<"Enter n:";
-    cin>>n;
-
-    int a[n];
-
-    cout<<"Enter elements:";
-    for(int i=0; i<n; i++)
-        cin>>a[i];
-
-    clock_t start=clock();
-    mergeSort(a, n);
-
-    cout<<"Sorted: ";
-    for(int i=0; i<n; i++)
-        cout<<a[i]<<" ";
-
-    cout<<endl<<"Time: "<<(clock()-start)<<"clock cycles";
+    return 0;
 }

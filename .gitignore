@@ -3,5 +3,6 @@
 *.class
 *.vcd
 *.docx#
+node_modules
 practice
 prac2

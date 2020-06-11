@@ -1,13 +1,13 @@
-##Shaan Subbaiah
+## Shaan Subbaiah
 __1BM18CS096__ - Sem III & IV - BMSCE Labs
 
-##Sem III
+## Sem III
 1. [Data Structures](#ds---data-structures---sem-iii)
 2. [Logic Design](#hdl---logic-design---sem-iii)
 3. [Java](#java---object-oriented-programming-java---sem-iii)
 4. [MicroProcessors and Microcontrollers](#mp---microprocessors-and-microcontrollers---sem-iii)
 
-##Sem IV
+## Sem IV
 1. [Analysis and Design of Algorithms](#ada---analysis-and-design-of-algorithms---sem-iv)
 2. [Database Management Systems](#sql---database-management-systems---sem-iv)
 3. [Theoretical Foundations of Computations](#tfc---theoretical-foundations-of-computations---sem-iv)
